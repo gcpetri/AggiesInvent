@@ -94,27 +94,34 @@ Vue.component('groups-page', {
                 </div>`
     }
 )
-/*
 Vue.component('alert-page', {
-    template: `<div class="alerts-page">
-                    <span @click="newElement()" class="addBtn">Add
-                    <div @click="open('Urgent')">
-                        <ul>
-                            <li> CIA Urgent Request for Information on Bob Joe </li>
+    template: `<div class="alert-page">
+                    <div class="alerts-title"><b>Alerts</b><hr></hr></div>
+                    <div class="alerts-list">
+                        <a @click="open('Urgent')">Urgent</a>
+                        <ul v-show="showUrgent">
+                            <li> • 20-09-19 06:37:43 This</li>
                         </ul>
-                        </div>
-                            <ul>
-                                <li> Ryan Ross Just Opened a Search under the Russian Counterintelligence Tag you Follow </li>
-                                <li> George Maker Is Requesting Access to Collaborate on a Document </li>
-                                <li> Russell Wu Made Edits to a Document you Collaborate On </li>
-                            </ul>
+                    </div>
+                    <div class="alerts-list">
+                        <a @click="open('Collab')">Collab</a>
+                        <ul v-show="showCollab">
+                            <li> • 20-09-16 06:37:43 This1 </li>
+                            <li> • 20-07-25 09:23:47 This2 </li>
+                            <li> • 20-06-28 10:51:12 This3</li>
+                        </ul>
                     </div>
                 </div>`,
     data: function() {
         return { showUrgent: false, showCollab: false}
     },
+    methods: {
+        open: function(type) {
+            if (type == 'Urgent') { return this.showUrgent=true, this.showCollab=false }
+            else if (type == 'Collab') { return this.showUrgent=false, this.showCollab=true }
+        }
+    }
 })
-*/
 Vue.component('nav-bar', {
     template: `<div class="nav-bar">
                     <ul>
