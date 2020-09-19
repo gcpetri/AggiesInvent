@@ -98,29 +98,23 @@ Vue.component('alert-page', {
     template: `<div class="alert-page">
                     <div class="alerts-title"><b>Alerts</b><hr></hr></div>
                     <div class="alerts-list">
-                        <a @click="open('Urgent')">Urgent</a>
-                        <ul v-show="showUrgent">
-                            <li> • 20-09-19 06:37:43 This</li>
+                        <a>Urgent</a>
+                        <ul>
+                            <li> &#8226 20-09-19 06:37:43 This</li>
                         </ul>
                     </div>
                     <div class="alerts-list">
-                        <a @click="open('Collab')">Collab</a>
-                        <ul v-show="showCollab">
-                            <li> • 20-09-16 06:37:43 This1 </li>
-                            <li> • 20-07-25 09:23:47 This2 </li>
-                            <li> • 20-06-28 10:51:12 This3</li>
+                        <a>Collab</a>
+                        <ul>
+                            <li> &#8226 20-09-16 06:37:43 This1 </li>
+                            <li> &#8226 20-07-25 09:23:47 This2 </li>
+                            <li> &#8226 20-06-28 10:51:12 This3</li>
                         </ul>
                     </div>
                 </div>`,
     data: function() {
         return { showUrgent: false, showCollab: false}
     },
-    methods: {
-        open: function(type) {
-            if (type == 'Urgent') { return this.showUrgent=true, this.showCollab=false }
-            else if (type == 'Collab') { return this.showUrgent=false, this.showCollab=true }
-        }
-    }
 })
 Vue.component('nav-bar', {
     template: `<div class="nav-bar">
