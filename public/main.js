@@ -122,7 +122,7 @@ Vue.component('groups-page', {
     template: `<div class="groups-page">
                     <div class="groups-title">My Groups</div>
                     <div class="dropdown">
-                        <button class="dropbtn" @mouseover="dropDown()">Groups</button>
+                        <button class="dropbtn" @mouseover="dropDown()">Groups<i class="fa fa-angle-down" style="margin-left: 1em;"></i></button>
                         <div v-show="showDropDown" class="dropdown-content">
                             <a @click="moveGroup('Fort')">NSA Security Analyists - Fort Meade</a>
                             <a @click="moveGroup('Texas')">NSA Security Analyists - Texas Headquarters</a>
@@ -134,10 +134,13 @@ Vue.component('groups-page', {
                             <div class="group-descriptions">
                                 <a>Members:</a></br>
                                 <ul>
-                                    <li>John Doe</li>
-                                    <li>Alicia Frank</li>
-                                    <li>Alfred Smith</li>
-                                    <li>Kirthivel Ramesh</li>
+                                    <li class="group-member">John Doe</li>
+				    <hr>
+                                    <li class="group-member">Alicia Frank</li>
+				    <hr>
+                                    <li class="group-member">Alfred Smith</li>
+				    <hr>
+                                    <li class="group-member">Kirthivel Ramesh</li>
                                 </ul>
                             </div>
                         </div>
@@ -146,12 +149,17 @@ Vue.component('groups-page', {
                             <div class="group-descriptions">
                                 <a>Members:</a></br>
                                 <ul>
-                                    <li>Jane Doe</li>
-                                    <li>Devin Franks</li>
-                                    <li>Nancy Petri</li>
-                                    <li>Marc Choucair</li>
-                                    <li>Ben Halpert</li>
-                                    <li>Greg Jean</li>
+                                    <li class="group-member">Jane Doe</li>
+				    <hr>
+                                    <li class="group-member">Devin Franks</li>
+				    <hr>
+                                    <li class="group-member">Nancy Petri</li>
+				    <hr>
+                                    <li class="group-member">Marc Choucair</li>
+				    <hr>
+                                    <li class="group-member">Ben Halpert</li>
+				    <hr>
+                                    <li class="group-member">Greg Jean</li>
                                 </ul>
                             </div>
                         </div>
