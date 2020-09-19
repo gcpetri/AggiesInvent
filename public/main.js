@@ -77,7 +77,7 @@ Vue.component('module-page', {
 		    </div>
 		    <br>
 		    <div id="results">
-		    	<li class="list-items" v-for="item in this.$root.cards" style="list-style: none;"><a v-bind:href=item.url>{{ item.name }}</a></li>
+		    	<li class="list-items" v-for="item in this.$root.cards" style="list-style: none;"><a v-bind:href=item.url target="_blank">{{ item.name }}</a></li>
 		    </div>
                 </div>
     `,
