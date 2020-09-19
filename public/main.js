@@ -132,11 +132,23 @@ Vue.component('groups-page', {
                             <div class="group-descriptions">
                                 <a>Members:</a></br>
                                 <ul>
-                                    <li>John Doe</li>
+                                    <li @click="outputModules('Doe')">John Doe</li>
                                     <li>Alicia Frank</li>
                                     <li>Alfred Smith</li>
-                                    <li>Kirthivel Ramesh</li>
+                                    <li @click="outputModules('Kir')">Kirthivel Ramesh</li>
+                                    <li>Keith Ratchel</li>
+                                    <li>Bob Ross</li>
+                                    <li>Edina Manzel</li>
+                                    <li>Mike Wasowski</li>
+                                    <li>George Strait</li>
+                                    <li>Rick Flair</li>
+                                    <li>Lil Wayne</li>
+                                    <li>Tom Cruise</li>
                                 </ul>
+                                <div class="member-modules">
+                                    <a v-show="displayDoe">Modules: Airport Security | Finland Communications |<a class="red">Iraq</a> Confidential</a>
+                                    <a v-show="displayKir">Modules: <a class="red">Zimbabwe</a>| Local Surveylance | Siberia Data Collection </a>
+                                </div>
                             </div>
                         </div>
                         <div v-show="show2" class="texas">
@@ -157,7 +169,7 @@ Vue.component('groups-page', {
                     </div>
                 </div>`,
     data: function() {
-        return { showDropDown: false, waiting: true, show1: false, show2: false }
+        return { showDropDown: false, waiting: true, show1: false, show2: false, displayKir: false, displayDoe: false }
     },
     methods: {
         dropDown: function() {
@@ -166,6 +178,10 @@ Vue.component('groups-page', {
         moveGroup: function(place) {
             if (place == 'Fort') { return this.show1=true, this.show2=false, this.waiting=false, this.showDropDown=false }
             else if (place == 'Texas') { return this.show1=false, this.show2=true, this.showDropDown=false, this.waiting=false }
+        },
+        outputModules: function(name) {
+            if (name == 'Kir') { return this.displayKir=true, this.displayDoe=false }
+            else if (name == 'Doe') { return this.displayDoe=true, this.displayKir=false }
         }
     }
 })
@@ -180,7 +196,7 @@ Vue.component('alert-page', {
                             <li> &#8226 20-08-19 05:31:08 TSA::Member accessed your module Zimbabwe</li>
                             <li> &#8226 20-09-19 05:09:49 CIA::Urgent Explosives Intelligence</li>
                             <li> &#8226 20-08-19 01:31:34 CIA::Member accessed your module Zimbabwe</li>
-                            <li> &#8226 20-08-19 01:31:00 DOD::</li>
+                            <li> &#8226 20-08-19 01:31:00 DOD::Member accessed your module Iraq</li>
                             <li> &#8226 20-08-19 01:31:08 STATE::Member accessed your module Zimbabwe</li>
                             <li> &#8226 20-08-19 00:41:59 FBI::Member accessed your module Zimbabwe</li>
                             <li> &#8226 20-08-18 07:38:18 TIA::Member accessed your module Zimbabwe</li>
