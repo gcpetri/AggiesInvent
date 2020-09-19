@@ -27,23 +27,22 @@ html, body {
     position: absolute;
     justify-items: center;
     text-align: center;
-    top: 45%;
+    top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-/*
-.home-page .cowboy-background {
-    background-image: url("cowboy2.png");
-    filter: blur(10px);
-    height: 800px;
-    width: 100%;
-    z-index: 1;
+    height: 90%;
+    -ms-transform: translate(-40%, -45%);
+    transform: translate(-40%, -45%);
+    background-image: url("data_cowboy.png");
     background-position: center;
     background-repeat: no-repeat;
-}*/
+    overflow: none;
+}
 .home-page .hp-header {
-    font-size: 3em;
+    font-size: 2em;
+}
+.home-page .hp_desc {
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0.849);
 }
 /* #### Navigation Bar #### */
 .nav-bar {
@@ -295,15 +294,8 @@ ul {
 }
 .alert-page .alerts-title {
     font-size: 2em;
-}
-.alert-page hr {
-    width: 70%;
-    border: 2px solid rgb(134, 1, 1);
-    color: rgb(134, 1, 1);
-    background-color: rgb(134, 1, 1);
-    justify-items: center;
-    -ms-transform: translate(22%, 0%);
-    transform: translate(22%, 0%);
+    background-color: rgb(112, 112, 112);
+    border-radius: 20px;
 }
 .alert-page .alerts-list {
     float: left;
@@ -317,13 +309,104 @@ ul {
 }
 .alert-page .alerts-list li {
     text-align: left;
-    background-color: rgba(173, 172, 172, 0.884);
+    background-color: rgba(173, 172, 172, 0.11);
     border-radius: 5px;
     padding: 5px;
-    margin: 3px;
+    margin: 10px;
     font-size: 15px;
     box-shadow: 5px 5px #666;
 }
 .alert-page .alerts-list ul {
     background-color: rgb(207, 166, 89);
+}
+/* #### groups page #### */
+.groups-page {
+    color: white;
+    font-size: 2em;
+    display: block;
+    position: absolute;
+    justify-items: center;
+    text-align: center;
+    height: 90%;
+    width: 81%;
+    left: 55%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgb(66, 66, 66);
+}
+.groups-page .groups-title {
+    color: rgb(224, 222, 222);
+}
+/* Dropdown Button */
+.groups-page .dropbtn {
+    background-color: rgb(207, 166, 89);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    margin: 2px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+.groups-page .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+.groups-page .dropdown .dropdown-content {
+    background-color: #e0dede94;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    color: rgb(44, 44, 44);
+    border-radius: 2px;
+  }
+  
+  /* Links inside the dropdown */
+.groups-page .dropdown .dropdown-content a {
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+    font-size: 10px;
+  }
+  
+  /* Change color of dropdown links on hover */
+.groups-page .dropdown .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu on hover */
+.groups-page .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+.groups-page .dropdown:hover .dropbtn {background-color: #ccc479;}
+.groups-page .group-info {
+    height: 80%;
+}
+.groups-page .group-info .fort-title {
+    font-size: 20px;
+    color: rgb(125, 241, 232);
+    display: block;
+    width: 40%;
+    left: 0%;
+}
+.groups-page .group-info .texas-title {
+    font-size: 20px;
+    color: rgb(125, 241, 232);
+    display: block;
+    width: 50%;
+    left: 0%;
+}
+.groups-page .group-info a {
+    color: grey;
+    display: block;
+    -ms-transform: translate(0%, 100%);
+    transform: translate(0%, 100%);
+}
+.groups-page .group-descriptions {
+
 }

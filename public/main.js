@@ -1,8 +1,8 @@
 // file to put the functional app
 Vue.component('home-page', {
     template: `<div class="home-page">
-                    <div><a class="hp-header">Secure Collab</a></div></br>
-                    <div><a class="hp_desc">One stop for Efficient NSA Security Communications</a></div>
+                    <div><a class="hp-header">S E C U R E&nbsp&nbsp&nbsp&nbspC O L L A B</a></div></br>
+                    <div><a class="hp_desc">One-stop for Efficient NSA Security Analysts communications & work space platform</a></div>
                     <div class="cowboy-background"></div>
                 </div>`
     }
@@ -35,7 +35,7 @@ Vue.component('task-page', {
 })
 Vue.component('assessment-page', {
     template: `<div class="assessment-page">
-                    <div class="page-title"><a class="page-title-text">My Modules</a></div>
+                    <div class="page-title"><a class="page-title-text">My Jobs</a></div>
                     <div class="add-button" @click="addModule()"><img src="add.png"/></div>
                     <ul>
                         <li v-for="item in this.$root.modules"><componenet :is="item"></componenet></li>
@@ -117,25 +117,97 @@ Vue.component('module-page', {
 })
 Vue.component('groups-page', {
     template: `<div class="groups-page">
-
-                </div>`
+                    <div class="groups-title">My Groups</div>
+                    <div class="dropdown">
+                        <button class="dropbtn" @mouseover="dropDown()">Groups</button>
+                        <div v-show="showDropDown" class="dropdown-content">
+                            <a @click="moveGroup('Fort')">NSA Security Analyists - Fort Meade</a>
+                            <a @click="moveGroup('Texas')">NSA Security Analyists - Texas Headquarters</a>
+                        </div>
+                    </div>
+                    <div class="group-info">
+                        <div v-show="show1" class="fort">
+                            <div class="fort-title">NSA Security Analyists - Fort Meade</div>
+                            <div class="group-descriptions">
+                                <a>Members:</a></br>
+                                <ul>
+                                    <li>John Doe</li>
+                                    <li>Alicia Frank</li>
+                                    <li>Alfred Smith</li>
+                                    <li>Kirthivel Ramesh</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div v-show="show2" class="texas">
+                            <div class="texas-title">NSA Security Analyists - Texas Headquarters</div>
+                            <div class="group-descriptions">
+                                <a>Members:</a></br>
+                                <ul>
+                                    <li>Jane Doe</li>
+                                    <li>Devin Franks</li>
+                                    <li>Nancy Petri</li>
+                                    <li>Marc Choucair</li>
+                                    <li>Ben Halpert</li>
+                                    <li>Greg Jean</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a v-show="waiting">Group Content...</a>
+                    </div>
+                </div>`,
+    data: function() {
+        return { showDropDown: false, waiting: true, show1: false, show2: false }
+    },
+    methods: {
+        dropDown: function() {
+            this.showDropDown=true;
+        },
+        moveGroup: function(place) {
+            if (place == 'Fort') { return this.show1=true, this.show2=false, this.waiting=false, this.showDropDown=false }
+            else if (place == 'Texas') { return this.show1=false, this.show2=true, this.showDropDown=false, this.waiting=false }
+        }
     }
-)
+})
 Vue.component('alert-page', {
     template: `<div class="alert-page">
-                    <div class="alerts-title"><b>Alerts</b><hr></hr></div>
+                    <div class="alerts-title"><b>Alerts</b></div>
                     <div class="alerts-list">
-                        <a>Urgent</a>
+                        <a>National Alerts</a>
                         <ul>
-                            <li> &#8226 20-09-19 06:37:43 This</li>
+                            <li> &#8226 20-09-19 06:37:43 CIA::Refuge Influx</li>
+                            <li> &#8226 20-09-19 06:34:33 CIA::Riots</li>
+                            <li> &#8226 20-08-19 05:31:08 TSA::Member accessed your module Zimbabwe</li>
+                            <li> &#8226 20-09-19 05:09:49 CIA::Urgent Explosives Intelligence</li>
+                            <li> &#8226 20-08-19 01:31:34 CIA::Member accessed your module Zimbabwe</li>
+                            <li> &#8226 20-08-19 01:31:00 DOD::</li>
+                            <li> &#8226 20-08-19 01:31:08 STATE::Member accessed your module Zimbabwe</li>
+                            <li> &#8226 20-08-19 00:41:59 FBI::Member accessed your module Zimbabwe</li>
+                            <li> &#8226 20-08-18 07:38:18 TIA::Member accessed your module Zimbabwe</li>
+                            <li> &#8226 20-08-18 07:31:08 TSA::Member accessed your module Iraq</li>
+                            <li> &#8226 20-08-17 01:31:56 TSA::Member accessed your module Zimbabwe</li>
                         </ul>
                     </div>
                     <div class="alerts-list">
-                        <a>Collab</a>
+                        <a>Project Alerts</a>
                         <ul>
-                            <li> &#8226 20-09-16 06:37:43 This1 </li>
-                            <li> &#8226 20-07-25 09:23:47 This2 </li>
-                            <li> &#8226 20-06-28 10:51:12 This3</li>
+                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Iraq</li>
+                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                         </ul>
                     </div>
                 </div>`,
@@ -148,7 +220,7 @@ Vue.component('nav-bar', {
                     <ul>
                         <li @click="nav_func('home')" v-bind:class="{active: nav_home2}"><a href="#home"><b>Home</b></a></li>
                         <li @click="nav_func('task')" v-bind:class="{active: nav_tasks2}"><a href="#tasks"><b>Tasks</b></a></li>
-                        <li @click="nav_func('assessment')" v-bind:class="{active: nav_jobs2}"><a href="#jobs"><b>Job</b></a></li>
+                        <li @click="nav_func('assessment')" v-bind:class="{active: nav_jobs2}"><a href="#jobs"><b>Jobs</b></a></li>
                         <li @click="nav_func('groups')" v-bind:class="{active: nav_groups2}"><a href="#groups"><b>Groups</b></a></li>
                         <li @click="nav_func('alert')" v-bind:class="{active: nav_alerts2}"><a href="#alerts"><b>Alerts</b></a></li>
                     </ul>
@@ -186,10 +258,6 @@ Vue.component('nav-bar', {
                                 this.nav_jobs2=false,this.nav_groups2=false,this.nav_alerts2=true}
         }
 }});
-
-
-
-
 var app = new Vue({
     el: '#app',
     data: {
