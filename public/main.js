@@ -1,15 +1,17 @@
 // file to put the functional app
 Vue.component('home-page', {
     template: `<div class="home-page">
-                    <div><a class="hp-header">S E C U R E&nbsp&nbsp&nbsp&nbspC O L L A B</a></div></br>
+    		    <div class="title-stuff">
+                    <div><a class="hp-header">SECURE&nbsp&nbspCOLLAB</a></div></br>
                     <div><a class="hp_desc">One-stop for Efficient NSA Security Analysts communications & work space platform</a></div>
+		    </div>
                     <div class="cowboy-background"></div>
                 </div>`
     }
 )
 Vue.component('task-page', {
 	template: `<div class="task-page">
-                    <div id="myDIV" class="header">
+                    <div class="header">
                         <h2>Task List</h2></br>
                         <input type="text" id="myInput" class="input" placeholder="New Task...">
                         <span @click="newElement()" class="addBtn">Add</span>
@@ -37,8 +39,11 @@ Vue.component('task-page', {
 })
 Vue.component('assessment-page', {
     template: `<div class="assessment-page">
-                    <div class="page-title"><a class="page-title-text">My Jobs</a></div>
-                    <div class="add-button" @click="addModule()"><img src="add.png"/></div>
+    		    <div class="assessment-header">
+			<b>My Jobs</b>
+			<div><br></div>
+			<i class="fa fa-plus-circle add-button" @click="addModule()"></i>
+		    </div>
                     <ul>
                         <li v-for="item in this.$root.modules"><componenet :is="item"></componenet></li>
                     </ul>
