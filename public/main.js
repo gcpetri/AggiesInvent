@@ -71,7 +71,10 @@ Vue.component('module-page', {
                     <div class="close-button"><img @click="closePage" src="close2.png"/></div>
                     <div class="title" @click="moduleTitle()"><b>{{ this.Module_title }}</b></div>
                     <div class="search-header">Search Databases</div>
-                    <div class="search-bar"><input type="text" id="SearchText" class="input" placeholder="Search... "></div>
+		    <div class="search-bar">
+		    	<input type="text" id="SearchText" class="input" placeholder="Query">
+			<button type="submit" @click="runSearch()"><i class="fa fa-search"></i> Search</button>
+		    </div>
                 </div>
     `,
     data: function() {
@@ -85,7 +88,14 @@ Vue.component('module-page', {
         closePage: function() {
             this.$root.assessment_job_page = true;
             this.$root.module_page = false;
-        }
+        },
+	runSearch: function() {
+            var query=document.getElementById("SearchText").value;
+            $.getJSON('https://api.datacowboy.ml/search?query='.concat(query), function(data) {
+		    console.log(data);
+		    // JSON result in `data` variable
+	    });
+	}
     }
 })
 Vue.component('groups-page', {
