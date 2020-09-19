@@ -67,7 +67,7 @@ let Module = {
     }
 }
 Vue.component('module-page', {
-    template: `<div class="module-page">
+	template: `<div class="module-page" style="overflow: auto;">
                     <div class="close-button"><img @click="closePage" src="close2.png"/></div>
                     <div class="title" @click="moduleTitle()"><b>{{ this.Module_title }}</b></div>
                     <div class="search-header">Search Databases</div>
@@ -96,6 +96,7 @@ Vue.component('module-page', {
 	makeCards: function(data) {
 	},
 	runSearch: function() {
+	    this.$root.cards = [];
             var query=document.getElementById("SearchText").value;
 	    var response = null;
 	    $.ajax({
