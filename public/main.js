@@ -15,7 +15,7 @@ Vue.component('task-page', {
                         <span @click="newElement()" class="addBtn">Add</span>
                     </div>
                     <ul id="myUL" class="task-list">
-                        <li class="list-items" v-for="items in this.$root.task_items" @click="makeChecked(items)" v-bind:class="{checked: isChecked}">{{ items.task }}</li>
+                        <li v-for="items in this.$root.task_items" @click="makeChecked(items)" v-bind:class="{checked: isChecked}">{{ items.task }}</li>
                     </ul>
                 </div>`,
     data: function() {
@@ -75,6 +75,10 @@ Vue.component('module-page', {
 		    	<input type="text" id="SearchText" class="input" placeholder="Query">
 			<button type="submit" @click="runSearch()"><i class="fa fa-search"></i> Search</button>
 		    </div>
+		    <br>
+		    <div id="results">
+		    	<li class="list-items" v-for="items in this.$root.cards"><a v-bind:href=items.url>{{ items.name }}</a></li>
+		    </div>
                 </div>
     `,
     data: function() {
@@ -89,12 +93,25 @@ Vue.component('module-page', {
             this.$root.assessment_job_page = true;
             this.$root.module_page = false;
         },
+	makeCards: function(data) {
+	},
 	runSearch: function() {
             var query=document.getElementById("SearchText").value;
-            $.getJSON('https://api.datacowboy.ml/search?query='.concat(query), function(data) {
-		    console.log(data);
-		    // JSON result in `data` variable
+	    var response = null;
+	    $.ajax({
+	        url: 'https://api.datacowboy.ml/search?query='.concat(query),
+		async: false,
+		dataType: 'json',
+		success: function (json) {
+		    response = json;
+		}
 	    });
+	    console.log(response);
+	    var i = 1;
+	    for (hash in response) {
+		this.$root.cards.push({name: "Result #".concat(i), url: "https://api.datacowboy.ml/req?hash=".concat(response[hash])});
+		i++;
+	    }
 	}
     }
 })
@@ -187,5 +204,7 @@ var app = new Vue({
 
         ],
         module_page: false,
+	cards: [
+	],
     }
 });
