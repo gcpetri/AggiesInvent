@@ -8,28 +8,30 @@ Vue.component('home-page', {
     }
 )
 Vue.component('task-page', {
-    template: `<div class="task-page">
+	template: `<div class="task-page">
                     <div id="myDIV" class="header">
                         <h2>Task List</h2></br>
                         <input type="text" id="myInput" class="input" placeholder="New Task...">
                         <span @click="newElement()" class="addBtn">Add</span>
                     </div>
                     <ul id="myUL" class="task-list">
-                        <li v-for="items in this.$root.task_items" @click="makeChecked(items)" v-bind:class="{checked: isChecked}">{{ items.task }}</li>
+                        <li v-for="(items, idx) in this.$root.task_items" @click="makeChecked(idx)" v-bind:class="{checked: items.done}" style="text-align: left;">
+			    {{ items.task }}
+			</li>
                     </ul>
                 </div>`,
     data: function() {
         return { 
-            isChecked: false,
         };
     },
     methods: {
         newElement: function() {
             var Task = document.getElementById('myInput').value;
-            this.$root.task_items.push({task: Task});
+            this.$root.task_items.push({task: Task, done: false});
         },
         makeChecked: function(item) {
-            console.log(item);
+	    this.$root.task_items[item].done = true;
+            console.log(this.$root.task_items[item].task);
         }
     }
 })
@@ -120,7 +122,7 @@ Vue.component('groups-page', {
     template: `<div class="groups-page">
                     <div class="groups-title">My Groups</div>
                     <div class="dropdown">
-                        <button class="dropbtn" @mouseover="dropDown()">Groups</button>
+                        <button class="dropbtn" @mouseover="dropDown()">Groups<i class="fa fa-angle-down" style="margin-left: 1em;"></i></button>
                         <div v-show="showDropDown" class="dropdown-content">
                             <a @click="moveGroup('Fort')">NSA Security Analyists - Fort Meade</a>
                             <a @click="moveGroup('Texas')">NSA Security Analyists - Texas Headquarters</a>
@@ -128,7 +130,7 @@ Vue.component('groups-page', {
                     </div>
                     <div class="group-info">
                         <div v-show="show1" class="fort">
-                            <div class="fort-title">NSA Security Analyists - Fort Meade</div>
+                            <div class="fort-title"><b>NSA Security Analyists - Fort Meade</b></div>
                             <div class="group-descriptions">
                                 <a>Members:</a></br>
                                 <ul>
@@ -145,23 +147,23 @@ Vue.component('groups-page', {
                                     <li>Lil Wayne</li>
                                     <li>Tom Cruise</li>
                                 </ul>
-                                <div class="member-modules">
-                                    <a v-show="displayDoe">Modules: Airport Security | Finland Communications |<a class="red">Iraq</a> Confidential</a>
-                                    <a v-show="displayKir">Modules: <a class="red">Zimbabwe</a>| Local Surveylance | Siberia Data Collection </a>
+                                <div v-show="memberMod" class="member-modules">
+                                    <div v-show="displayDoe"><p><b>Modules:</b></br></br>Airport SecurityFinland Communications</br>Cyber Attacks - 05/2020</br><span class="red">Iraq</span></br>Confidential</p></div>
+                                    <div v-show="displayKir"><p><b>Modules:</b></br></br><span class="red">Zimbabwe</span></br>Local Surveylance</br>Siberia Data Collection</p></div>
                                 </div>
                             </div>
                         </div>
                         <div v-show="show2" class="texas">
-                            <div class="texas-title">NSA Security Analyists - Texas Headquarters</div>
+                            <div class="texas-title"><b>NSA Security Analyists - Texas Headquarters</b></div>
                             <div class="group-descriptions">
                                 <a>Members:</a></br>
                                 <ul>
-                                    <li>Jane Doe</li>
-                                    <li>Devin Franks</li>
-                                    <li>Nancy Petri</li>
-                                    <li>Marc Choucair</li>
-                                    <li>Ben Halpert</li>
-                                    <li>Greg Jean</li>
+                                    <li class="group-member">Jane Doe</li>
+                                    <li class="group-member">Devin Franks</li>
+                                    <li class="group-member">Nancy Petri</li>
+                                    <li class="group-member">Marc Choucair</li>
+                                    <li class="group-member">Jim Halpert</li>
+                                    <li class="group-member">Greg Jean</li>
                                 </ul>
                             </div>
                         </div>
@@ -169,7 +171,7 @@ Vue.component('groups-page', {
                     </div>
                 </div>`,
     data: function() {
-        return { showDropDown: false, waiting: true, show1: false, show2: false, displayKir: false, displayDoe: false }
+        return { showDropDown: false, waiting: true, show1: false, show2: false, displayKir: false, displayDoe: false, memberMod: false }
     },
     methods: {
         dropDown: function() {
@@ -180,8 +182,8 @@ Vue.component('groups-page', {
             else if (place == 'Texas') { return this.show1=false, this.show2=true, this.showDropDown=false, this.waiting=false }
         },
         outputModules: function(name) {
-            if (name == 'Kir') { return this.displayKir=true, this.displayDoe=false }
-            else if (name == 'Doe') { return this.displayDoe=true, this.displayKir=false }
+            if (name == 'Kir') { return this.displayKir=true, this.displayDoe=false, this.memberMod=true }
+            else if (name == 'Doe') { return this.displayDoe=true, this.displayKir=false, this.memberMod=true }
         }
     }
 })
@@ -192,16 +194,16 @@ Vue.component('alert-page', {
                         <a>National Alerts</a>
                         <ul>
                             <li> &#8226 20-09-19 06:37:43 CIA::Refuge Influx</li>
-                            <li> &#8226 20-09-19 06:34:33 CIA::Riots</li>
-                            <li> &#8226 20-08-19 05:31:08 TSA::Member accessed your module Zimbabwe</li>
+                            <li> &#8226 20-09-19 06:34:33 CIA::Terroriest Leader Intel</li>
+                            <li> &#8226 20-08-19 05:31:08 TSA::Midigating Potential Voting Hacks</li>
                             <li> &#8226 20-09-19 05:09:49 CIA::Urgent Explosives Intelligence</li>
-                            <li> &#8226 20-08-19 01:31:34 CIA::Member accessed your module Zimbabwe</li>
-                            <li> &#8226 20-08-19 01:31:00 DOD::Member accessed your module Iraq</li>
-                            <li> &#8226 20-08-19 01:31:08 STATE::Member accessed your module Zimbabwe</li>
-                            <li> &#8226 20-08-19 00:41:59 FBI::Member accessed your module Zimbabwe</li>
-                            <li> &#8226 20-08-18 07:38:18 TIA::Member accessed your module Zimbabwe</li>
-                            <li> &#8226 20-08-18 07:31:08 TSA::Member accessed your module Iraq</li>
-                            <li> &#8226 20-08-17 01:31:56 TSA::Member accessed your module Zimbabwe</li>
+                            <li> &#8226 20-08-19 01:31:34 CIA::Emminent Threat Forecast</li>
+                            <li> &#8226 20-08-19 01:31:00 DOD::Urgent Illegal Weaponery Discoveries</li>
+                            <li> &#8226 20-08-19 01:31:08 STATE::Riot Breakouts</li>
+                            <li> &#8226 20-08-19 00:41:59 FBI::Congressional Transportation Safety Dynamics</li>
+                            <li> &#8226 20-08-18 07:38:18 TIA::Defence Vulnerabilities</li>
+                            <li> &#8226 20-08-18 07:31:08 TSA::Screening Data</li>
+                            <li> &#8226 20-08-17 01:31:56 TSA::Airline Flight Threat Detected</li>
                         </ul>
                     </div>
                     <div class="alerts-list">
@@ -284,7 +286,6 @@ var app = new Vue({
         groups_page: false,
         alert_page: false,
         task_items: [
-            {task: ''},
         ],
         modules: [
 

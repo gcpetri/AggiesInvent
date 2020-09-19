@@ -132,7 +132,7 @@ ul {
 .task-page ul li.checked {
     background: rgba(128, 127, 127, 0.521);
     color: rgb(43, 42, 42);
-    content: '✓';
+    text-decoration: line-through;
 } 
 /* Add a "checked" mark when clicked on */
 .task-page ul li.checked::before {
@@ -366,6 +366,7 @@ ul {
     z-index: 10;
     color: rgb(44, 44, 44);
     border-radius: 2px;
+    font-size: 20px;
   }
   
   /* Links inside the dropdown */
@@ -373,7 +374,6 @@ ul {
     padding: 5px 5px;
     text-decoration: none;
     display: block;
-    font-size: 10px;
   }
   
   /* Change color of dropdown links on hover */
@@ -387,9 +387,10 @@ ul {
 .groups-page .group-info {
     height: 80%;
 }
-.groups-page .group-info .fort-title {
-    font-size: 20px;
-    color: rgb(125, 241, 232);
+.groups-page .group-info {
+    color: rgb(224, 222, 222);
+    text-align: center;
+    margin: auto;
     display: block;
     width: 40%;
     left: 0%;
@@ -397,18 +398,17 @@ ul {
     padding: 3px;
     border-radius: 9px;
 }
-.groups-page .group-info .texas-title {
+.groups-page .group-info {
     font-size: 20px;
-    color: rgb(125, 241, 232);
+    color: rgb(224, 222, 222);
     display: block;
-    width: 50%;
+    width: 80%;
     left: 0%;
-    background-color: rgb(32, 32, 32);
     padding: 3px;
     border-radius: 9px;
 }
 .groups-page .group-info a {
-    color: grey;
+    color: rgb(224, 222, 222);
     display: block;
     -ms-transform: translate(0%, 100%);
     transform: translate(0%, 100%);
@@ -421,7 +421,7 @@ ul {
 }
 .groups-page .group-descriptions ul {
     list-style-type: none;
-    margin: 0;
+    margin: 20px;
     padding: 0;
     overflow: hidden;
     background-color: none;
@@ -450,15 +450,16 @@ ul {
       color: rgba(255, 255, 255, 0.829);
 }
 .groups-page .group-descriptions .member-modules {
-    background-color: rgba(255, 255, 255, 0.822);
+    background-color: rgb(207, 166, 89);
     margin: 10px;
     border-radius: 20px;
-    width: 40%;
+    width: 60%;
 }
-.groups-page .group-descriptions ul li a {
-    margin: 20px;
+.groups-page .group-descriptions .member-modules {
     color: rgb(48, 47, 47);
+    padding: 15px;
+    text-align: left;
 }
-.groups-page .group-descriptions ul li a .red {
+.groups-page .group-descriptions .member-modules .red {
     color: rgb(161, 8, 8);
 }
