@@ -15,7 +15,7 @@ Vue.component('task-page', {
                         <span @click="newElement()" class="addBtn">Add</span>
                     </div>
                     <ul id="myUL" class="task-list">
-                        <li class="list-items" v-for="items in this.$root.task_items" @click="makeChecked(items)" v-bind:class="{checked: isChecked}">{{ items.task }}</li>
+                        <li v-for="items in this.$root.task_items" @click="makeChecked(items)" v-bind:class="{checked: isChecked}">{{ items.task }}</li>
                     </ul>
                 </div>`,
     data: function() {
@@ -71,7 +71,14 @@ Vue.component('module-page', {
                     <div class="close-button"><img @click="closePage" src="close2.png"/></div>
                     <div class="title" @click="moduleTitle()"><b>{{ this.Module_title }}</b></div>
                     <div class="search-header">Search Databases</div>
-                    <div class="search-bar"><input type="text" id="SearchText" class="input" placeholder="Search... "></div>
+		    <div class="search-bar">
+		    	<input type="text" id="SearchText" class="input" placeholder="Query">
+			<button type="submit" @click="runSearch()"><i class="fa fa-search"></i> Search</button>
+		    </div>
+		    <br>
+		    <div id="results">
+		    	<li class="list-items" v-for="item in this.$root.cards" style="list-style: none;"><a v-bind:href=item.url>{{ item.name }}</a></li>
+		    </div>
                 </div>
     `,
     data: function() {
@@ -85,7 +92,27 @@ Vue.component('module-page', {
         closePage: function() {
             this.$root.assessment_job_page = true;
             this.$root.module_page = false;
-        }
+        },
+	makeCards: function(data) {
+	},
+	runSearch: function() {
+            var query=document.getElementById("SearchText").value;
+	    var response = null;
+	    $.ajax({
+	        url: 'https://api.datacowboy.ml/search?query='.concat(query),
+		async: false,
+		dataType: 'json',
+		success: function (json) {
+		    response = json;
+		}
+	    });
+	    console.log(response);
+	    var i = 1;
+	    for (hash in response) {
+		this.$root.cards.push({name: "Result #".concat(i), url: "https://api.datacowboy.ml/req?hash=".concat(response[hash])});
+		i++;
+	    }
+	}
     }
 })
 Vue.component('groups-page', {
@@ -178,5 +205,7 @@ var app = new Vue({
 
         ],
         module_page: false,
+	cards: [
+	],
     }
 });
