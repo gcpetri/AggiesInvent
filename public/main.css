@@ -395,13 +395,18 @@ ul {
     display: block;
     width: 40%;
     left: 0%;
+    background-color: rgb(32, 32, 32);
+    padding: 3px;
+    border-radius: 9px;
 }
 .groups-page .group-info {
     font-size: 20px;
     color: rgb(224, 222, 222);
     display: block;
-    width: 50%;
+    width: 80%;
     left: 0%;
+    padding: 3px;
+    border-radius: 9px;
 }
 .groups-page .group-info a {
     color: rgb(224, 222, 222);
@@ -410,14 +415,51 @@ ul {
     transform: translate(0%, 100%);
 }
 .groups-page .group-descriptions {
+    background-color: none;
+}
+.groups-page .group-descriptions a {
+    width: 30%;
+}
+.groups-page .group-descriptions ul {
+    list-style-type: none;
+    margin: 20px;
+    padding: 0;
+    overflow: hidden;
+    background-color: none;
+    left: 0%;
+    height: 50%;
+    border-radius: 40px;
+    overflow: auto;
+    width: 30%;
     font-size: 20px;
-    color: rgb(224, 222, 222);
+    float: left;
 }
-.fort-title .texas-title {
-    font-size: 12px !important;
+.groups-page .group-descriptions ul li {
+    display: block;
+    color: rgb(122, 121, 121);
+    text-align: center;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 100%;
 }
-.group-member {
-    color: rgb(66, 66, 66);
+.groups-page .groups-descriptions ul li:hover{
+    background-color: #333333;
+}
+.groups-page .group-descriptions ul li.active {
+      background: rgb(207, 166, 89);
+      color: rgba(255, 255, 255, 0.829);
+}
+.groups-page .group-descriptions .member-modules {
+    background-color: rgb(207, 166, 89);
+    margin: 10px;
+    border-radius: 20px;
+    width: 60%;
+}
+.groups-page .group-descriptions .member-modules {
+    color: rgb(48, 47, 47);
+    padding: 15px;
+    text-align: left;
 }
 .title-stuff {
     background-color: rgba(66, 66, 66, 0.9) !important;
@@ -428,4 +470,7 @@ ul {
     font-size: 1.5em;
     background-color: #5c5b5b;
     padding: 30px 40px 10px;
+}
+.groups-page .group-descriptions .member-modules .red {
+    color: rgb(161, 8, 8);
 }
