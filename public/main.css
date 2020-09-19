@@ -245,3 +245,23 @@ ul {
 .module .open-module:hover {
     background-color: rgb(26, 25, 25);
 }
+/* ##### Module Page ##### */
+.module-page {
+    color: white;
+    font-size: 2em;
+    display: block;
+    position: absolute;
+    justify-items: center;
+    text-align: center;
+    height: 90%;
+    width: 81%;
+    left: 55%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgb(197, 197, 197);
+    box-shadow: 5px 10px #888;
+}

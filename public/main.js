@@ -59,15 +59,16 @@ let Module = {
     methods: {
         openModule: function() {
             this.$root.module_page=true;
+            this.$root.assessment_job_page=false;
         },
         inputTitle: function() {
             this.showOpen=true;
         }
     }
 }
-Vue.componenet('module-page', {
-    template: `<div class=module-page">
-
+Vue.component('module-page', {
+    template: `<div class="module-page">
+                    <div class="search-header">Search Databases</div>
                 </div>
     `
 })
@@ -77,12 +78,33 @@ Vue.component('groups-page', {
                 </div>`
     }
 )
+/*
 Vue.component('alert-page', {
     template: `<div class="alerts-page">
-
+                    <span @click="newElement()" class="addBtn">Add
+                    <div @click="open('Urgent')">
+                        <ul>
+                            <li> CIA Urgent Request for Information on Bob Joe </li>
+                        </ul>
+                        </div>
+                            <ul>
+                                <li> Ryan Ross Just Opened a Search under the Russian Counterintelligence Tag you Follow </li>
+                                <li> George Maker Is Requesting Access to Collaborate on a Document </li>
+                                <li> Russell Wu Made Edits to a Document you Collaborate On </li>
+                            </ul>
+                    </div>
+                </div>`,
+    data: function(){return {showurgent=false,showcollab=false}},
+    methods: {
+        open: function(type){this.showurgent=true,}
+    }
+    
+    }
+    )
                 </div>`
     }
 )
+*/
 Vue.component('nav-bar', {
     template: `<div class="nav-bar">
                     <ul>
