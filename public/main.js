@@ -8,28 +8,30 @@ Vue.component('home-page', {
     }
 )
 Vue.component('task-page', {
-    template: `<div class="task-page">
+	template: `<div class="task-page">
                     <div id="myDIV" class="header">
                         <h2>Task List</h2></br>
                         <input type="text" id="myInput" class="input" placeholder="New Task...">
                         <span @click="newElement()" class="addBtn">Add</span>
                     </div>
                     <ul id="myUL" class="task-list">
-                        <li v-for="items in this.$root.task_items" @click="makeChecked(items)" v-bind:class="{checked: isChecked}">{{ items.task }}</li>
+                        <li v-for="(items, idx) in this.$root.task_items" @click="makeChecked(idx)" v-bind:class="{checked: items.done}" style="text-align: left;">
+			    {{ items.task }}
+			</li>
                     </ul>
                 </div>`,
     data: function() {
         return { 
-            isChecked: false,
         };
     },
     methods: {
         newElement: function() {
             var Task = document.getElementById('myInput').value;
-            this.$root.task_items.push({task: Task});
+            this.$root.task_items.push({task: Task, done: false});
         },
         makeChecked: function(item) {
-            console.log(item);
+	    this.$root.task_items[item].done = true;
+            console.log(this.$root.task_items[item].task);
         }
     }
 })
@@ -206,7 +208,6 @@ var app = new Vue({
         groups_page: false,
         alert_page: false,
         task_items: [
-            {task: ''},
         ],
         modules: [
 

@@ -133,7 +133,7 @@ ul {
 .task-page ul li.checked {
     background: rgba(128, 127, 127, 0.521);
     color: rgb(43, 42, 42);
-    content: '✓';
+    text-decoration: line-through;
 } 
 /* Add a "checked" mark when clicked on */
 .task-page ul li.checked::before {
