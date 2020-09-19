@@ -79,8 +79,30 @@ Vue.component('groups-page', {
 )
 Vue.component('alert-page', {
     template: `<div class="alerts-page">
+                    <div id="MyAlerts" class="header">
+                        <h2>New Alerts</h2></br>
+                    </div>
+                    <div id="myDIV" class="header">
+                        <h2>Alerts</h2></br>
+                        <span @click="newElement()" class="addBtn">Add</span>
+                    <div @click="open('Urgent')">
 
-                </div>`
+                    <ul>
+                        <li> CIA Urgent Request for Information on Bob Joe </li>
+                    </ul>
+                    </div>
+                    <ul>
+                        <li> Ryan Ross Just Opened a Search under the Russian Counterintelligence Tag you Follow </li>
+                        <li> George Maker Is Requesting Access to Collaborate on a Document </li>
+                        <li> Russell Wu Made Edits to a Document you Collaborate On </li>
+                    </ul>
+
+                </div>`,
+    data: function(){return {showurgent=false,showcollab=false}},
+    methods: {
+        open: function(type){this.showurgent=true,}
+    }
+
     }
 )
 Vue.component('nav-bar', {
