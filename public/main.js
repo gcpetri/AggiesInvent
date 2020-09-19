@@ -68,9 +68,25 @@ let Module = {
 }
 Vue.component('module-page', {
     template: `<div class="module-page">
+                    <div class="close-button"><img @click="closePage" src="close2.png"/></div>
+                    <div class="title" @click="moduleTitle()"><b>{{ this.Module_title }}</b></div>
                     <div class="search-header">Search Databases</div>
+                    <div class="search-bar"><input type="text" id="SearchText" class="input" placeholder="Search... "></div>
                 </div>
-    `
+    `,
+    data: function() {
+        return { Module_title: "Hello" };
+    },
+    methods: {
+        moduleTitle: function() {
+            var Title=document.getElementById("ModuleInput").value;
+            this.Module_title = Title;
+        },
+        closePage: function() {
+            this.$root.assessment_job_page = true;
+            this.$root.module_page = false;
+        }
+    }
 })
 Vue.component('groups-page', {
     template: `<div class="groups-page">
@@ -94,16 +110,10 @@ Vue.component('alert-page', {
                             </ul>
                     </div>
                 </div>`,
-    data: function(){return {showurgent=false,showcollab=false}},
-    methods: {
-        open: function(type){this.showurgent=true,}
-    }
-    
-    }
-    )
-                </div>`
-    }
-)
+    data: function() {
+        return { showUrgent: false, showCollab: false}
+    },
+})
 */
 Vue.component('nav-bar', {
     template: `<div class="nav-bar">
@@ -127,23 +137,23 @@ Vue.component('nav-bar', {
     methods: {
         nav_func: function(page) {
             if (page == 'home') {return this.$root.home_page=true, this.$root.task_page=false, this.$root.assessment_job_page=false, 
-                                this.$root.groups_page=false, this.$root.alert_page=false,
+                                this.$root.groups_page=false, this.$root.alert_page=false, this.$root.module_page=false,
                                 this.nav_home2=true,this.nav_tasks2=false,
                                 this.nav_jobs2=false,this.nav_groups2=false,this.nav_alerts2=false}
             else if (page == 'task') {return this.$root.home_page=false, this.$root.task_page=true, this.$root.assessment_job_page=false, 
-                                this.$root.groups_page=false, this.$root.alert_page=false,
+                                this.$root.groups_page=false, this.$root.alert_page=false, this.$root.module_page=false,
                                 this.nav_home2=false,this.nav_tasks2=true,
                                 this.nav_jobs2=false,this.nav_groups2=false,this.nav_alerts2=false}
             else if (page == 'assessment') {return this.$root.home_page=false, this.$root.task_page=false, this.$root.assessment_job_page=true, 
-                                this.$root.groups_page=false, this.$root.alert_page=false,
+                                this.$root.groups_page=false, this.$root.alert_page=false, this.$root.module_page=false,
                                 this.nav_home2=false,this.nav_tasks2=false,
                                 this.nav_jobs2=true,this.nav_groups2=false,this.nav_alerts2=false}
             else if (page == 'groups') {return this.$root.home_page=false, this.$root.task_page=false, this.$root.assessment_job_page=false, 
-                                this.$root.groups_page=true, this.$root.alert_page=false,
+                                this.$root.groups_page=true, this.$root.alert_page=false, this.$root.module_page=false,
                                 this.nav_home2=false,this.nav_tasks2=false,
                                 this.nav_jobs2=false,this.nav_groups2=true,this.nav_alerts2=false}
             else if (page == 'alert') {return this.$root.home_page=false, this.$root.task_page=false, this.$root.assessment_job_page=false, 
-                                this.$root.groups_page=false, this.$root.alert_page=true,
+                                this.$root.groups_page=false, this.$root.alert_page=true, this.$root.module_page=false,
                                 this.nav_home2=false,this.nav_tasks2=false,
                                 this.nav_jobs2=false,this.nav_groups2=false,this.nav_alerts2=true}
         }
