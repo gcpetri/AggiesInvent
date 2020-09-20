@@ -41,7 +41,7 @@ Vue.component('assessment-page', {
     template: `<div class="assessment-page">
     		    <div class="assessment-header">
 			<b>My Jobs</b>
-			<div><br></div>
+			<br/>
 			<i class="fa fa-plus-circle add-button" @click="addModule()"></i>
 		    </div>
                     <ul>
@@ -57,7 +57,7 @@ Vue.component('assessment-page', {
 let Module = {
     template: `<div class="module">
                     <div @click="inputTitle()" class="module-title"><input type="text" id="ModuleInput" class="input" placeholder="Title..."></div>
-                    </br></br></br></br>
+                    </br/>
                     <div v-show="showOpen" @click="openModule()" class="open-module">Open Module</div>
                 </div>`,
     data: function() {
@@ -75,21 +75,23 @@ let Module = {
 }
 Vue.component('module-page', {
 	template: `<div class="module-page" style="overflow: auto;">
-                    <div class="close-button"><img @click="closePage" src="close2.png"/></div>
+		    <div class="close-button"><i class="fa fa-times-circle"></i></div>
                     <div class="title" @click="moduleTitle()"><b>{{ this.Module_title }}</b></div>
-                    <div class="search-header">Search Databases</div>
 		    <div class="search-bar">
 		    	<input type="text" id="SearchText" class="input" placeholder="Query">
 			<button type="submit" @click="runSearch()"><i class="fa fa-search"></i> Search</button>
 		    </div>
 		    <br>
 		    <div id="results">
-		    	<li class="list-items" v-for="item in this.$root.cards" style="list-style: none;"><a v-bind:href=item.url target="_blank">{{ item.name }}</a></li>
+		    	<div v-for="item in this.$root.cards">
+		    	<li class="list-items" style="list-style: none;"><a class="list-items" v-bind:href=item.url target="_blank">{{ item.name }}</a></li>
+			<br/>
+			</div>
 		    </div>
                 </div>
     `,
     data: function() {
-        return { Module_title: "Hello" };
+        return { Module_title: "Search" };
     },
     methods: {
         moduleTitle: function() {
@@ -198,9 +200,9 @@ Vue.component('alert-page', {
                     <div class="alerts-list">
                         <a>National Alerts</a>
                         <ul>
-                            <li> &#8226 20-09-19 06:37:43 CIA::Refuge Influx</li>
-                            <li> &#8226 20-09-19 06:34:33 CIA::Terroriest Leader Intel</li>
-                            <li> &#8226 20-08-19 05:31:08 TSA::Midigating Potential Voting Hacks</li>
+                            <li> &#8226 20-09-19 06:37:43 CIA::Refugee Influx</li>
+                            <li> &#8226 20-09-19 06:34:33 CIA::Terrorist Leader Intel</li>
+                            <li> &#8226 20-08-19 05:31:08 TSA::Mitigating Potential Voting Hacks</li>
                             <li> &#8226 20-09-19 05:09:49 CIA::Urgent Explosives Intelligence</li>
                             <li> &#8226 20-08-19 01:31:34 CIA::Emminent Threat Forecast</li>
                             <li> &#8226 20-08-19 01:31:00 DOD::Urgent Illegal Weaponery Discoveries</li>

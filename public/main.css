@@ -18,7 +18,7 @@ html, body {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     overflow: auto;
-    background-color: rgb(207, 166, 89);
+    background-color: #eeeded;
 }
 .home-page {
     color: white;
@@ -72,7 +72,7 @@ ul {
   }
   
   li a:hover {
-    background-color: #333333;
+    background-color: #111111;
   }
   li.active {
       background: rgb(207, 166, 89);
@@ -229,20 +229,20 @@ ul {
 }
 .module {
     padding: 10%;
-    background-color: rgb(207, 166, 89);
     border-radius: 10px;
     margin: 10px;
-    box-shadow: 5px 10px #888;
-    z-index: 1;
+    background-color: #5c5b5b;
 }
 .module .open-module {
     font-size: 10px;
-    background-color: rgb(51, 50, 50);
     color: white;
     border-radius: 10px;
     padding: 10px;
 }
-.module .open-module:hover {
+.open-module {
+    background-color: rgb(44, 44, 44);
+}
+.open-module:hover {
     background-color: rgb(26, 25, 25);
 }
 /* ##### Module Page ##### */
@@ -259,14 +259,11 @@ ul {
     top: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    z-index: 0;
     padding: 20px;
     border-radius: 30px;
-    background-color: rgb(197, 197, 197);
-    box-shadow: 5px 10px #888;
+    background-color: #5c5b5b;
 }
 .module-page .title {
-    color: rgb(95, 95, 95);
     font-size: 1.5em;
 }
 .module-page img {
@@ -473,4 +470,9 @@ ul {
 }
 .groups-page .group-descriptions .member-modules .red {
     color: rgb(161, 8, 8);
+}
+.list-items {
+    font-size: 1em;
+    color: #eeeded !important;
+    background-color: #333333;
 }
