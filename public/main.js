@@ -203,42 +203,25 @@ Vue.component('alert-page', {
     template: `<div class="alert-page">
                     <div class="alerts-title"><b>Alerts</b></div>
                     <div class="alerts-list">
-                        <a>National Alerts</a>
-                        <ul>
-                            <li> &#8226 20-09-19 06:37:43 CIA::Refugee Influx</li>
-                            <li> &#8226 20-09-19 06:34:33 CIA::Terrorist Leader Intel</li>
-                            <li> &#8226 20-08-19 05:31:08 TSA::Mitigating Potential Voting Hacks</li>
-                            <li> &#8226 20-09-19 05:09:49 CIA::Urgent Explosives Intelligence</li>
-                            <li> &#8226 20-08-19 01:31:34 CIA::Emminent Threat Forecast</li>
-                            <li> &#8226 20-08-19 01:31:00 DOD::Urgent Illegal Weaponery Discoveries</li>
-                            <li> &#8226 20-08-19 01:31:08 STATE::Riot Breakouts</li>
-                            <li> &#8226 20-08-19 00:41:59 FBI::Congressional Transportation Safety Dynamics</li>
-                            <li> &#8226 20-08-18 07:38:18 TIA::Defence Vulnerabilities</li>
-                            <li> &#8226 20-08-18 07:31:08 TSA::Screening Data</li>
-                            <li> &#8226 20-08-17 01:31:56 TSA::Airline Flight Threat Detected</li>
-                        </ul>
-                    </div>
-                    <div class="alerts-list">
-                        <a>Project Alerts</a>
-                        <ul>
-                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
-                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Iraq</li>
-                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
-                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
-                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
-                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
-                            <li> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                        <ul class="alerts-container">
+                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Iraq</li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                         </ul>
                     </div>
                 </div>`,
