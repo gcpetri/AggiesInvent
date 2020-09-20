@@ -2,7 +2,7 @@
 Vue.component('home-page', {
     template: `<div class="home-page">
     		    <div class="title-stuff">
-                    <div><a class="hp-header">SECURE&nbsp&nbspCOLLAB</a></div></br>
+                    <div><a class="hp-header">S E C U R E&nbsp&nbspC O L L A B</a></div></br>
                     <div><a class="hp_desc">One-stop for Efficient NSA Security Analysts communications & work space platform</a></div>
 		    </div>
                     <div class="cowboy-background"></div>
