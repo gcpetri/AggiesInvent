@@ -141,8 +141,8 @@ Vue.component('groups-page', {
                         <div v-show="show1" class="fort">
                             <div class="fort-title"><b>NSA Security Analyists - Fort Meade</b></div>
                             <div class="group-descriptions">
-                                <a style="text-align: left;">Members:</a><br/>
-                                <ul style="text-align: left;">
+                                <a >Members:</a><br/>
+                                <ul>
                                     <li @click="outputModules('Doe')">John Doe</li>
                                     <li>Alicia Frank</li>
                                     <li>Alfred Smith</li>
