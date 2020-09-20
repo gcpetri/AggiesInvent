@@ -1,18 +1,16 @@
 // file to put the functional app
 Vue.component('home-page', {
     template: `<div class="home-page">
-    		    <div class="title-stuff">
-                    <div><a class="hp-header">S E C U R E&nbsp&nbspC O L L A B</a></div></br>
-                    <div><a class="hp_desc">One-stop for Efficient NSA Security Analysts communications & work space platform</a></div>
-		    </div>
-                    <div class="cowboy-background"></div>
+                <div><a class="hp-header">S E C U R E&nbsp&nbspC O L L A B</a></div></br>
+                <div><a class="hp_desc">One-stop for Efficient NSA Security Analysts communications & work space platform</a></div>
+                <div class="cowboy-background"></div>
                 </div>`
     }
 )
 Vue.component('task-page', {
 	template: `<div class="task-page">
                     <div class="header">
-                        <h2>Task List</h2></br>
+                        <h2>Task List</h2><br/>
                         <input type="text" id="myInput" class="input" placeholder="New Task...">
                         <span @click="newElement()" class="addBtn">Add</span>
                     </div>
@@ -57,7 +55,7 @@ Vue.component('assessment-page', {
 let Module = {
     template: `<div class="module">
                     <div @click="inputTitle()" class="module-title"><input type="text" id="ModuleInput" class="input" placeholder="Title..."></div>
-                    </br/>
+                    <br/>
                     <div v-show="showOpen" @click="openModule()" class="open-module">Open Module</div>
                 </div>`,
     data: function() {
@@ -75,13 +73,13 @@ let Module = {
 }
 Vue.component('module-page', {
 	template: `<div class="module-page" style="overflow: auto;">
-		    <div class="close-button"><i class="fa fa-times-circle"></i></div>
+		    <div class="close-button"><i class="fa fa-times-circle" @click="closePage"></i></div>
                     <div class="title" @click="moduleTitle()"><b>{{ this.Module_title }}</b></div>
 		    <div class="search-bar">
 		    	<input type="text" id="SearchText" class="input" placeholder="Query">
 			<button type="submit" @click="runSearch()"><i class="fa fa-search"></i> Search</button>
 		    </div>
-		    <br>
+		    <br/>
 		    <div id="results">
 		    	<div v-for="item in this.$root.cards">
 		    	<li class="list-items" style="list-style: none;"><a class="list-items" v-bind:href=item.url target="_blank">{{ item.name }}</a></li>
@@ -127,20 +125,25 @@ Vue.component('module-page', {
 })
 Vue.component('groups-page', {
     template: `<div class="groups-page">
-                    <div class="groups-title">My Groups</div>
-                    <div class="dropdown">
-                        <button class="dropbtn" @mouseover="dropDown()">Groups<i class="fa fa-angle-down" style="margin-left: 1em;"></i></button>
-                        <div v-show="showDropDown" class="dropdown-content">
-                            <a @click="moveGroup('Fort')">NSA Security Analyists - Fort Meade</a>
-                            <a @click="moveGroup('Texas')">NSA Security Analyists - Texas Headquarters</a>
-                        </div>
-                    </div>
+                    <div class="groups-header">
+			    <b>My Groups</b>
+			    <br/>
+			    <div class="dropdown">
+				<button class="dropbtn" @mouseover="dropDown()">Groups<i class="fa fa-angle-down" style="margin-left: 1em;"></i></button>
+				<br style="line-height: 50%;"/>
+				<div v-show="showDropDown" class="dropdown-content">
+				    <a class="dd-item" @click="moveGroup('Fort')">NSA Security Analyists - Fort Meade</a>
+				    <a class="dd-item" @click="moveGroup('Texas')">NSA Security Analyists - Texas Headquarters</a>
+				</div>
+			    </div>
+		    </div>
+		    <br/>
                     <div class="group-info">
                         <div v-show="show1" class="fort">
                             <div class="fort-title"><b>NSA Security Analyists - Fort Meade</b></div>
                             <div class="group-descriptions">
-                                <a>Members:</a></br>
-                                <ul>
+                                <a style="text-align: left;">Members:</a><br/>
+                                <ul style="text-align: left;">
                                     <li @click="outputModules('Doe')">John Doe</li>
                                     <li>Alicia Frank</li>
                                     <li>Alfred Smith</li>
@@ -155,15 +158,15 @@ Vue.component('groups-page', {
                                     <li>Tom Cruise</li>
                                 </ul>
                                 <div v-show="memberMod" class="member-modules">
-                                    <div v-show="displayDoe"><p><b>Modules:</b></br></br>Airport SecurityFinland Communications</br>Cyber Attacks - 05/2020</br><span class="red">Iraq</span></br>Confidential</p></div>
-                                    <div v-show="displayKir"><p><b>Modules:</b></br></br><span class="red">Zimbabwe</span></br>Local Surveylance</br>Siberia Data Collection</p></div>
+                                    <div v-show="displayDoe"><p><b>Modules:</b><br/><br/>Airport Security<br/>Finland Communications<br/>Cyber Attacks - 05/2020<br/><span class="red">Iraq</span><br/>Confidential</p></div>
+                                    <div v-show="displayKir"><p><b>Modules:</b><br/><br/><span class="red">Zimbabwe</span><br/>Local Surveillance<br/>Siberia Data Collection</p></div>
                                 </div>
                             </div>
                         </div>
                         <div v-show="show2" class="texas">
                             <div class="texas-title"><b>NSA Security Analyists - Texas Headquarters</b></div>
                             <div class="group-descriptions">
-                                <a>Members:</a></br>
+                                <a>Members:</a><br/>
                                 <ul>
                                     <li class="group-member">Jane Doe</li>
                                     <li class="group-member">Devin Franks</li>
