@@ -125,7 +125,7 @@ Vue.component('module-page', {
 })
 Vue.component('groups-page', {
     template: `<div class="groups-page">
-                    <div class="groups-header">
+                <div class="groups-header">
 			    <b>My Groups</b>
 			    <br/>
 			    <div class="dropdown">
@@ -137,8 +137,7 @@ Vue.component('groups-page', {
 				</div>
 			    </div>
 		    </div>
-		    <br/>
-                    <div class="group-info">
+                    <div class="group-info"></br>
                         <div v-show="show1" class="fort">
                             <div class="fort-title"><b>NSA Security Analyists - Fort Meade</b></div>
                             <div class="group-descriptions">
