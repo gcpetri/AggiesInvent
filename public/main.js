@@ -200,26 +200,33 @@ Vue.component('alert-page', {
     template: `<div class="alert-page">
                     <div class="alerts-title"><b>Alerts</b></div>
                     <div class="alerts-list">
+		    	<b class="alerts-heading">Zimbabwe</b>
                         <ul class="alerts-container">
-                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
                             <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                        </ul>
+			<b class="alerts-heading">Iraq</b>
+			<ul class="alerts-container">
+                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
                             <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+		        </ul>
+			<b class="alerts-heading">Shared Activity</b>
+			<ul class="alerts-container">
                             <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
-                        </ul>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+			</ul>
                     </div>
                 </div>`,
     data: function() {

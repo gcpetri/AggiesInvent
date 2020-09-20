@@ -308,8 +308,14 @@ ul {
 .alerts-list {
     height: 100%;
     overflow: auto;
+    background-color: #eeeded !important;
+}
+.alerts-heading {
+    background-color: #eeeded !important;
+    color: #5c5b5b !important;
 }
 .alerts-container {
+    height: auto !important;
     overflow: auto;
 }
 .alert-item {
