@@ -13,12 +13,8 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0px;
-    animation-name: first-back-ground;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
     overflow: auto;
-    background-color: #eeeded;
+    background: rgb(207, 166, 89)
 }
 .home-page {
     color: white;
@@ -29,13 +25,19 @@ html, body {
     text-align: center;
     top: 50%;
     left: 50%;
+<<<<<<< HEAD
     height: 100%;
+=======
+    height: 90%;
+    width: 60%;
+>>>>>>> 6fda72b0b557630743348bec5448b087c47a0a6c
     -ms-transform: translate(-40%, -45%);
     transform: translate(-40%, -45%);
     background-image: url("data_cowboy.png");
     background-position: center;
     background-repeat: no-repeat;
     overflow: none;
+    background-color: rgb(207, 166, 89);
 }
 .home-page .hp-header {
     font-size: 2em;
@@ -288,6 +290,7 @@ ul {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 0;
+    background: rgb(207, 166, 89)
 }
 .alerts-title {
     padding: 30px 40px;
@@ -373,17 +376,9 @@ ul {
   
   /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #111111;}
-.group-info {
-    height: 100%
-    text-align: center;
-    color: #5c5b5b;
-    margin: auto;
-    display: block;
-    left: 0%;
-    padding: 3px;
-    border-radius: 9px;
-    width: 80%;
-    font-size: 20px;
+
+.groups-page {
+    background-color: rgb(207, 166, 89);
 }
 .group-info a {
     display: block;
@@ -413,6 +408,8 @@ ul {
     padding-top: 5px;
     padding-bottom: 5px;
     height: 100%;
+    color: black;
+    padding: 5px;
 }
 .groups-descriptions ul li:hover{
     background-color: #333333;
@@ -426,12 +423,6 @@ ul {
 }
 .group-descriptions .member-modules {
     padding: 15px;
-    text-align: left;
-}
-.title-stuff {
-    background-color: rgba(66, 66, 66, 0.9) !important;
-    border-radius: 20px;
-    padding: 25px;
 }
 .assessment-header {
     font-size: 1.5em;
