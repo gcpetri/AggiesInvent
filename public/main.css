@@ -13,7 +13,7 @@ html, body {
     width: 100%;
     height: 100%;
     margin: 0px;
-    overflow: auto;
+    overflow: none;
     background: rgb(207, 166, 89)
 }
 .home-page {
