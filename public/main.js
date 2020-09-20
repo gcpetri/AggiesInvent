@@ -142,7 +142,7 @@ Vue.component('groups-page', {
                             <div class="fort-title"><b>NSA Security Analyists - Fort Meade</b></div>
                             <div class="group-descriptions">
                                 <a >Members:</a><br/>
-                                <ul>
+                                <ul class="group-members">
                                     <li @click="outputModules('Doe')">John Doe</li>
                                     <li>Alicia Frank</li>
                                     <li>Alfred Smith</li>
@@ -166,7 +166,7 @@ Vue.component('groups-page', {
                             <div class="texas-title"><b>NSA Security Analyists - Texas Headquarters</b></div>
                             <div class="group-descriptions">
                                 <a>Members:</a><br/>
-                                <ul>
+                                <ul class="group-members">
                                     <li class="group-member">Jane Doe</li>
                                     <li class="group-member">Devin Franks</li>
                                     <li class="group-member">Nancy Petri</li>

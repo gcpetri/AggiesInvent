@@ -320,6 +320,7 @@ ul {
 /* #### groups page #### */
 .groups-page {
     color: white;
+    background-color: white !important;
     font-size: 2em;
     display: block;
     position: absolute;
@@ -381,6 +382,10 @@ ul {
     -ms-transform: translate(0%, 100%);
     transform: translate(0%, 100%);
 }
+.group-info {
+    color: #5c5b5b;
+    background-color: white;
+}
 .group-descriptions a {
     width: 30%;
 }
@@ -389,7 +394,6 @@ ul {
     margin: 20px;
     padding: 0;
     overflow: hidden;
-    background-color: none;
     left: 0%;
     height: 50%;
     border-radius: 10px;
@@ -427,6 +431,9 @@ ul {
 }
 .group-descriptions .member-modules .red {
     color: rgb(161, 8, 8);
+}
+.group-members {
+    background-color: rgba(128, 127, 127, 0.221) !important;
 }
 .list-items {
     font-size: 1em;
