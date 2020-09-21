@@ -2,7 +2,7 @@
 Vue.component('home-page', {
     template: `<div class="home-page">
                 <div><a class="hp-header">S E C U R E&nbsp&nbspC O L L A B</a></div></br>
-                <div><a class="hp_desc">One-stop for Efficient NSA Security Analysts communications & work space platform</a></div>
+                <div><a class="hp_desc">The security analyst's platform for efficient communication and research</a></div>
                 <div class="cowboy-background"></div>
                 </div>`
     }
@@ -142,7 +142,7 @@ Vue.component('groups-page', {
                             <div class="fort-title"><b>NSA Security Analyists - Fort Meade</b></div>
                             <div class="group-descriptions">
                                 <a >Members:</a><br/>
-                                <ul>
+                                <ul class="group-members">
                                     <li @click="outputModules('Doe')">John Doe</li>
                                     <li>Alicia Frank</li>
                                     <li>Alfred Smith</li>
@@ -166,7 +166,7 @@ Vue.component('groups-page', {
                             <div class="texas-title"><b>NSA Security Analyists - Texas Headquarters</b></div>
                             <div class="group-descriptions">
                                 <a>Members:</a><br/>
-                                <ul>
+                                <ul class="group-members">
                                     <li class="group-member">Jane Doe</li>
                                     <li class="group-member">Devin Franks</li>
                                     <li class="group-member">Nancy Petri</li>
@@ -200,26 +200,33 @@ Vue.component('alert-page', {
     template: `<div class="alert-page">
                     <div class="alerts-title"><b>Alerts</b></div>
                     <div class="alerts-list">
+		    	<b class="alerts-heading">Zimbabwe</b>
                         <ul class="alerts-container">
-                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
                             <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+                        </ul>
+			<b class="alerts-heading">Iraq</b>
+			<ul class="alerts-container">
+                            <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
                             <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
-                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
                             <li class="alert-item"> &#8226 20-09-16 06:37:43 John Doe added file with your tag Iraq</li>
-                            <li class="alert-item"> &#8226 20-07-25 09:23:47 John Deer searched file with your tag Zimbabwe</li>
+		        </ul>
+			<b class="alerts-heading">Shared Activity</b>
+			<ul class="alerts-container">
                             <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
-                        </ul>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+                            <li class="alert-item"> &#8226 20-06-28 10:51:12 Jane Deer started module with your title </li>
+			</ul>
                     </div>
                 </div>`,
     data: function() {
